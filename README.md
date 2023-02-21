@@ -35,6 +35,12 @@ Also, make sure the label on for the hidden input has a custom attribute of aria
 
 Now your form is set so that sighted users and users who rely on assistive technology will never know that hidden input exists.
 
+### Adding ids to elements in Webflow
+
+In Webflow, you'll want to make sure and add ids to two elements. You'll need an id for your honeypot input. In this example we're using `work-email` for ours. Your form may actually have a field named that so you may need to change this up. Just make sure that whatever you choose has a real world naming convention so that the bot doesn't skip this field.
+
+You'll also need an id for your submit button in Webflow and in our example we're using `submit`. We'll use these in our JavaScript to check if the bot filled our honeypot input and then disable the submit button if they have.
+
 ### Using JavaScript to prevent submission
 
 Now you need to use JavaScript to prevent the form from submitting if the honeypot filled is submitted. What I did, was added an event on input that disables the submit button. Feel free to improve this or try other methods.
